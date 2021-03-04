@@ -1,0 +1,35 @@
+﻿@model IEnumerable<UStore.Models.Product>
+
+@{
+    ViewData["Title"] = "Товары";
+}
+
+<div>
+    <a href="/updateproduct">Добавить товар</a>
+</div>
+
+@if (Model.Any()) {
+    <table>
+        <tr>
+            <td>Наименование</td>
+            <td>Производитель</td>
+            <td>Цена</td>
+            <td>Количество</td>
+            <td></td>
+        </tr>
+        @foreach (var p in Model) {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Manufacturer</td>
+                <td>@p.Price</td>
+                <td>@p.CountInStock</td>
+                <td>
+                    <a href="/updateproduct?productId=@p.Id">Изменить</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else {
+    <h3>Товара нет в наличие</h3>
+}

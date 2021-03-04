@@ -1,0 +1,27 @@
+﻿@model UStore.Models.Authorization.LoginModel
+
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<h2>Введите свои данные</h2>
+
+<form asp-action="Login" asp-controller="Account" asp-antiforgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+    <div>
+        <div>
+            <label asp-for="Phone">Введите номер телефона</label><br />
+            <input asp-for="Phone" />
+            <span asp-validation-for="Phone"></span>
+        </div>
+        <div>
+            <label asp-for="Password">Введите пароль</label><br />
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <input type="submit" value="Войти" />
+        </div>
+    </div>
+</form> 

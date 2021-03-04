@@ -1,0 +1,25 @@
+﻿@model IEnumerable<UStore.Models.OrdersModel>
+
+@{
+    ViewData["Title"] = "Заказы";
+}
+
+<h3>Список заказов</h3>
+<table>
+    <tr>
+        <td>Покупатель</td>
+        <td>Товар</td>
+        <td>Производитель</td>
+        <td>Цена</td>
+        <td>Дата</td>
+    </tr>
+    @foreach (var o in Model) {
+        <tr>
+            <td>@o.UserName</td>
+            <td>@o.Product</td>
+            <td>@o.Manufacturer</td>
+            <td>@o.Price</td>
+            <td>@o.Date</td>
+        </tr>
+    }
+</table>

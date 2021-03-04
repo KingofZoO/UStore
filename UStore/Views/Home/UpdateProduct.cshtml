@@ -1,0 +1,40 @@
+﻿@model UStore.Models.Product
+
+@{
+    ViewData["Title"] = "Данные о товаре";
+}
+
+<h3>Данные о товаре</h3>
+
+<form asp-action="UpdateProduct" asp-controller="Home" asp-antiforgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+    <div>
+        <div>
+            <input type="hidden" value="@ViewBag.ProductId" asp-for="Id" />
+        </div>
+        <div>
+            <label asp-for="Name">Введите наименование товара</label><br />
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label asp-for="Manufacturer">Введите производителя</label><br />
+            <input asp-for="Manufacturer" />
+            <span asp-validation-for="Manufacturer"></span>
+        </div>
+        <div>
+            <label asp-for="Price">Введите цену товара</label><br />
+            <input asp-for="Price" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div>
+            <label asp-for="CountInStock">Введите количество товара</label><br />
+            <input asp-for="CountInStock" />
+            <span asp-validation-for="CountInStock"></span>
+        </div>
+        <div>
+            <input type="submit" value="Внести изменения" />
+        </div>
+    </div>
+</form> 
